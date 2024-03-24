@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Food Delivery App</title>
+    <!-- Styles can be added here or in a separate CSS file -->
+
+
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+<h1>Welcome to the Food Delivery App</h1>
+
+<h2>Select Your Diet Plan:</h2>
+<button onclick="showMenu('cutting')">Cutting</button>
+<button onclick="showMenu('neutral')">Neutral</button>
+<button onclick="showMenu('bulking')">Bulking</button>
+
+<div id="menuContainer" class="container" style="display:none;">
+
+    <h2>Choose Your Dish:</h2>
+    <div id="cuttingMenu" style="display:none;">
+        <img src="Ceviche.jpeg" alt="Ceviche" width="200">
+        <button onclick="redirectToPayment('Ceviche')">Ceviche</button>
+        <img src="Carpaccio.jpeg" alt="Carpaccio" width="200">
+        <button onclick="redirectToPayment('Carpaccio')">Carpaccio</button>
+    </div>
+    <div id="neutralMenu" style="display:none;">
+        <img src="Grilled Salmon with Quinoa.jpeg" alt="Grilled Salmon with Quinoa" width="200">
+        <button onclick="redirectToPayment('Grilled Salmon with Quinoa')">Grilled Salmon with Quinoa and Roasted Vegetables</button>
+        <img src="Chicken Chickpea Salad.jpeg" alt="Chicken Chickpea Salad" width="200">
+        <button onclick="redirectToPayment('Chicken Chickpea Salad')">Grilled Salmon with Chicken Chickpea Salad</button>
+    </div>
+    <div id="bulkingMenu" style="display:none;">
+        <img src="Kabsa.jpeg" alt="Kabsa" width="200">
+        <button onclick="redirectToPayment('Kabsa')">Kabsa</button>
+        <img src="Majboos.jpeg" alt="Majboos" width="200">
+        <button onclick="redirectToPayment('Majboos')">Majboos</button>
+    </div>
+</div>
+
+<div id="paymentContainer" class="container" style="display:none;"></div>
+    <h2>Select Payment Method</h2>
+    <button onclick="confirmPayment('Cash')">Cash</button>
+    <button onclick="confirmPayment('Card')">Card</button>
+    <button onclick="confirmPayment('Tamara')">Tamara</button>
+    <button onclick="confirmPayment('Apple Pay')">Apple Pay</button>
+</div>
+
+<script>
+function showMenu(dietPlan) {
+    // Hide all menus first
+    document.getElementById('cuttingMenu').style.display = 'none';
+    document.getElementById('neutralMenu').style.display = 'none';
+    document.getElementById('bulkingMenu').style.display = 'none';
+
+    // Show the selected menu
+    document.getElementById('menuContainer').style.display = 'block';
+    document.getElementById(dietPlan + 'Menu').style.display = 'block';
+}
+
+function redirectToPayment(dish) {
+    // Store the dish selection in a way appropriate for your app. Here we'll just log it.
+    console.log('Selected dish:', dish);
+
+    // Show the payment container
+    document.getElementById('menuContainer').style.display = 'none';
+    document.getElementById('paymentContainer').style.display = 'block';
+}
+
+function confirmPayment(method) {
+    // In a real application, you would handle the payment process here.
+    console.log('Selected payment method:', method);
+    alert('Your order has been placed. You will pay with ' + method + '. Thank you!');
+    // Reset the view or redirect to a confirmation page etc.
+}
+</script>
+
+</body>
+</html>

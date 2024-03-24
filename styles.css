@@ -1,0 +1,116 @@
+/* Apply a natural box layout model to all elements */
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
+  /* Reset margins and paddings */
+  body, h1, h2, button {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    line-height: 1.6;
+  }
+  
+  .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  header {
+    background: #333;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #ffc107 solid 3px;
+  }
+  
+  header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  
+  header ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+  }
+  
+  header #branding {
+    float: left;
+  }
+  
+  header #branding h1 {
+    margin: 0;
+  }
+  
+  header nav {
+    float: right;
+    margin-top: 10px;
+  }
+  
+  header .highlight, header .current a {
+    color: #ffc107;
+    font-weight: bold;
+  }
+  
+  header a:hover {
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  button:hover {
+    background-color: #555;
+    color: #fff;
+  }
+  
+  #menuContainer {
+    margin: 20px 0;
+  }
+  
+  #paymentContainer {
+    margin: 20px 0;
+  }
+  
+  /* Clear floats after the columns */
+  section:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media (max-width: 600px) {
+    header #branding, header nav, header nav li, .container, section column {
+      float: none;
+      text-align: center;
+      width: 100%;
+    }
+  
+    header nav li {
+      padding: 0;
+    }
+  }
+  
